@@ -4,7 +4,6 @@ body {
 }
 
 #artistContainer {
-    height: 100vh;
     background: linear-gradient(hsl(0, 0%, 50%), hsl(0, 0%, 7%));
 }
 
@@ -108,7 +107,7 @@ body {
     transform: scaleX(1.1);
 }
 
-.btns-container .dropdown-menu {
+.dropdown-menu {
     border: none;
     padding: 5px;
     border-radius: 3px;
@@ -116,7 +115,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.btns-container .dropdown-item {
+.dropdown-item {
     display: flex;
     justify-content: space-between;
 
@@ -128,11 +127,12 @@ body {
     letter-spacing: 0.2px;
 }
 
-.btns-container .dropdown-item:hover {
+.dropdown-item:hover {
+    color: #fff;
     background-color: rgb(124, 124, 124, 0.5);
 }
 
-.btns-container .dropdown-item span i {
+.dropdown-item span i {
     font-size: 18px;
     color: #b3b3b3;
     margin-right: 10px;
@@ -163,4 +163,142 @@ body {
 
 .nested-dropdown-menu:hover .nested-dropdown-item {
     visibility: visible;
+}
+
+/* SONG LIST */
+.popular-title {
+    color: #fff;
+    font-weight: 900;
+    margin-left: 30px;
+}
+
+.tracklist-container {
+    width: 70%;
+}
+
+.tracklist {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.tracklist:hover {
+    background-color: rgb(124, 124, 124, 0.35);
+}
+
+.song-number,
+.song-title,
+.song-duration {
+    font-weight: 700;
+}
+
+.song-number,
+.song-duration {
+    color: #b3b3b3;
+}
+
+.album-cover {
+    width: 50px;
+    border-radius: 3px;
+}
+
+.song-title {
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.song-title:hover {
+    text-decoration: underline;
+}
+
+/* SONG DURATION */
+.song-duration {
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.plus-icon,
+.tracklist .dropdown {
+    font-size: 16px;
+    display: inline-block;
+}
+
+.plus-icon {
+    margin-right: 20px;
+
+    transition: all 100ms ease-in-out;
+}
+
+/* TRACKLIST DROPDOWN */
+.tracklist .dropdown {
+    margin-left: 20px;
+}
+
+.plus-icon:hover {
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.tracklist:hover .plus-icon,
+.tracklist:hover .dots-icon {
+    display: inline-block !important;
+}
+
+.plus-icon,
+.dots-icon {
+    visibility: hidden;
+}
+
+.added-icon {
+    color: #3be477;
+}
+
+.dots-icon:hover {
+    color: #fff;
+}
+
+.tracklist:hover .plus-icon,
+.tracklist:hover .dots-icon {
+    visibility: visible;
+}
+
+.tracklist li:nth-of-type(2),
+.tracklist li:nth-of-type(6) {
+    border-bottom: 1px solid rgb(124, 124, 124, 0.5);
+}
+
+.tracklist li:nth-of-type(6) {
+    border-top: 1px solid rgb(124, 124, 124, 0.5);
+}
+
+.bg-lighter {
+    background-color: rgb(124, 124, 124, 0.7) !important;
+}
+
+.show-icon {
+    visibility: visible;
+}
+
+.favorite {
+    visibility: visible;
+}
+
+/*  POPULAR SONGS: SECOND CONTAINER */
+.hide-popular-songs {
+    color: #b3b3b3;
+    font-weight: 900;
+    margin-left: 45px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.hide-popular-songs:hover {
+    color: #fff;
+    cursor: default;
 }
