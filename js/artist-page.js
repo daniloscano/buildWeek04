@@ -1,6 +1,7 @@
 const ARTIST_API = 'https://striveschool-api.herokuapp.com/api/deezer/artist';
 const MUSIC_API = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=';
 const params = new URLSearchParams(location.search);
+const artistNameParam = params.get('artist');
 const id = params.get('id');
 
 const artistContainer = document.getElementById('artistContainer');
@@ -22,7 +23,7 @@ hidePopularButton.addEventListener('click', () => {
 
 const getArtist = async () => {
     try {
-        const response = await fetch(`${ARTIST_API}/${79126582}`);
+        const response = await fetch(`${ARTIST_API}/${id}`);
         return response.json();
     } catch (error) {
         console.log(error);
@@ -30,7 +31,7 @@ const getArtist = async () => {
 };
 
 const generateArtistHeader = data => {
-    const { name, nb_fan: listeners, picture_xl: image } = data;
+    const { nb_fan: listeners, picture_xl: image } = data;
 
     const coverContainer = document.createElement('header');
     coverContainer.setAttribute('class', 'position-relative border rounded-3');
@@ -48,7 +49,7 @@ const generateArtistHeader = data => {
 
     const artistName = document.createElement('h1');
     artistName.setAttribute('class', 'artist-name');
-    artistName.innerText = name;
+    artistName.innerText = artistNameParam;
 
     const monthlyListeners = document.createElement('p');
     monthlyListeners.setAttribute('class', 'monthly-listeners');
@@ -60,11 +61,12 @@ const generateArtistHeader = data => {
 };
 
 getArtist().then(results => generateArtistHeader(results));
+getArtist().then(results => console.log(results));
 
 // GENERATE TRACKLIST
 const getArtistTracklist = async () => {
     try {
-        const response = await fetch(`${MUSIC_API}alexcherney`);
+        const response = await fetch(`${MUSIC_API}${artistNameParam}`);
         return response.json();
     } catch (error) {
         console.log(error);
