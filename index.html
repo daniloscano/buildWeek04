@@ -14,10 +14,15 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
             rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
         <title>Document</title>
+        <link rel="stylesheet" href="./css/swiper.css" />
         <link rel="stylesheet" href="./css/style.css" />
     </head>
-    <body>
+    <body class="p-2">
         <!-- NAVBAR -->
         <nav class="container-fluid px-lg-4 py-2">
             <div class="row">
@@ -61,13 +66,22 @@
         <!-- MAIN -->
         <main class="container-fluid">
             <div class="row">
-                <div class="col-3 bg-black"></div>
+                <div class="d-none d-lg-block col-3 border"></div>
                 <!-- SEZIONE ARTISTA -->
-                <div class="col-9 rounded-3 p-0"></div>
+                <div class="col-12 col-lg-9 rounded-3 p-0 main-container">
+                    <h3 class="section-title py-3">Popular artists</h3>
+                    <div class="swiper">
+                        <div id="artistContainer" class="swiper-wrapper"></div>
+                        <div class="swiper-button-prev ms-2"></div>
+                        <div class="swiper-button-next me-2"></div>
+                    </div>
+                </div>
             </div>
         </main>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./js/swiper.js"></script>
         <script src="./js/main.js"></script>
     </body>
 </html>
